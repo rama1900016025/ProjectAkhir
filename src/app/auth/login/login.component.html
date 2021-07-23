@@ -1,0 +1,32 @@
+<div class="container uk-flex uk-flex-middle uk-flex-center uk-height-viewport">
+    <div class="row">
+      <div class="col-7">
+          <img style="height: 500px; width: 600px ;" src="assets/2388390.jpg" alt="">
+      </div>
+      <div class="col-5 border border-secondary" style="background-color: rgb(59, 59, 59); width: 400px;">
+        <p class="mt-5 h4" style="color: whitesmoke;">Hello!</p>
+        <p class="h6" style="margin-top: -14px; color: rgb(219, 26, 90);">Welcome To Music Corner</p>
+        <p class="mt-4 h3 uk-flex uk-flex-middle uk-flex-center" style="color:whitesmoke;">Login Your Account</p>
+        <form>
+            <div class="mt-3 form-group">
+              <label for="exampleInputEmail1" class="text-white">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-white">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [type]="hide ? 'password' : 'text'" hide = true;>
+              <a class="float-right position-sticky" style="color: #000; margin-top: -40px;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </a>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1" class="text-white">Remember</label>
+              <a href="" class="float-right text-warning">Forgot Password</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+            <a href="register" class="mt-3 h6 uk-flex uk-flex-middle uk-flex-center text-white">Create Account</a>
+          </form>
+      </div>
+    </div>
+  </div>
