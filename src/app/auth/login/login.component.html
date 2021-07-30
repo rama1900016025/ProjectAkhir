@@ -7,14 +7,14 @@
         <p class="mt-5 h4" style="color: whitesmoke;">Hello!</p>
         <p class="h6" style="margin-top: -14px; color: rgb(219, 26, 90);">Welcome To Music Corner</p>
         <p class="mt-4 h3 uk-flex uk-flex-middle uk-flex-center" style="color:whitesmoke;">Login Your Account</p>
-        <form>
+        <form action="login()" (submit)="login()">
             <div class="mt-3 form-group">
               <label for="exampleInputEmail1" class="text-white">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+              <input [(ngModel)]="user.email" name="email" matInput type="text" class="form-control" placeholder="Enter Address">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1" class="text-white">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [type]="hide ? 'password' : 'text'" hide = true;>
+              <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Your Password" value="" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [type]="hide ? 'password' : 'text'" hide = true;>
               <a class="float-right position-sticky" style="color: #000; margin-top: -40px;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </a>
@@ -29,4 +29,4 @@
           </form>
       </div>
     </div>
-  </div>
+  </div>  

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  user : any;
+  user : any = {};
   constructor(
     public auth: AngularFireAuth,
     public router: Router

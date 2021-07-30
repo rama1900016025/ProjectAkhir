@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { SubplaylistComponent } from './subplaylist/subplaylist.component';
+import { UploadComponent } from './upload/upload.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes : Routes = [
   {
@@ -19,6 +21,10 @@ const routes : Routes = [
         path:'subplaylist',
         component: SubplaylistComponent
       },
+      {
+        path:'upload',
+        component: UploadComponent
+      }
     ]
   }
 ]
@@ -27,12 +33,15 @@ const routes : Routes = [
   declarations: [
     AdminComponent,
     PlaylistComponent,
-    SubplaylistComponent
+    SubplaylistComponent,
+    UploadComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
-    materialModule
+    materialModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

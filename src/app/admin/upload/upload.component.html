@@ -1,0 +1,20 @@
+<h2>Tambah Lagu</h2>
+<form>
+    <div class="uk-margin">
+        <input [(ngModel)]="playlist.judul" name="judul" class="uk-input uk-form-width-large" type="text" placeholder="Judul Lagu">
+    </div>
+    <div class="uk-margin">
+        <input [(ngModel)]="playlist.penyanyi" name="penyanyi" class="uk-input uk-form-width-large" type="text" placeholder="Penyanyi">
+    </div>
+    <div class="uk-margin">
+        <input [(ngModel)]="playlist.genre" name="genre" class="uk-input uk-form-width-large" type="text" placeholder="Genre">
+    </div>
+</form>
+
+
+    <div class="uk-margin-small">
+        <div class="uk-button-group" style="margin-left: 358px;">
+            <button mat-flat-button>Batal</button>
+            <button (click)="upload()" mat-flat-button color="primary">Simpan</button>
+        </div>
+    </div>
