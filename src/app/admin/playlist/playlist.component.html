@@ -1,0 +1,10 @@
+ <div class="col mb-4" *ngFor="let list of playlist">
+  <div class="card float-left mx-3" style="width: 18rem;">
+    <img src="{{list['img']}}" class="card-img-top" alt="{{list['title']}}">
+    <div class="card-body">
+      <h5 class="card-title">{{list['title']}}</h5>
+      <p class="card-text">{{list['x']}}</p>
+      <a routerLink="/home/subplaylist" class="btn btn-primary">Lihat Playlist</a>
+    </div>
+    </div>
+  </div>

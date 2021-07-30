@@ -1,48 +1,71 @@
 <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        
-        <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-
-        <a class="navbar-brand" routerLink="/admin">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-
-    <mat-sidenav-container class="example-container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       
-        <mat-sidenav #sidenav mode="side" [position]="'start'" class="sidenav-left"
-        [fixedInViewport]="true" [fixedTopGap]="60"
-        [fixedBottomGap]="0">
-          <div class="avatar">
-            <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="rounded-circle float-left" alt="...">
-            <p class="name-admin text-center text-uppercase">Mr. Petruk</p>
-          </div>
-          
-          <div style="margin-top: 80px;">
-            <ul class="list-group list-group-flush" *ngFor="let pilih of pilihan;">
-                <li>
-                  <a class="list-group-item list-group-item-action" style="border: none;" routerLink="{{pilih['link']}}">An item</a>
-                </li>
-            </ul>
-          </div>
+      <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+      </button>
 
-        </mat-sidenav>
-      
-      <mat-sidenav #sidenav mode="side" [position]="'end'"  class="example-sidenav"
+      <a class="navbar-brand" routerLink="/admin">Music Corner</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <form class="form-inline">
+        <input class="form-control mr-sm-2 float-right" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    
+      <!-- <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+    
+            <div class="uk-navbar-item">
+                <form class="uk-search uk-search-navbar uk-search-default " >
+                    <span uk-search-icon></span>
+                    <input class="uk-search-input" type="search" placeholder="Search">
+                </form>
+            </div>
+    
+        </div>
+    </nav>    -->
+
+  </nav>
+
+  <mat-sidenav-container class="example-container">
+    
+      <mat-sidenav #sidenav mode="side" [position]="'start'" class="sidenav-left"
       [fixedInViewport]="true" [fixedTopGap]="60"
       [fixedBottomGap]="0">
-      </mat-sidenav>
-      <!-- sidenav content -->
-      <mat-sidenav-content style="padding: 20px; background-color: #bfbfbf;">
-      <!--halaman-halaman tampil disini-->
-  
-      <router-outlet></router-outlet>
+        <div class="avatar">
+          <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" class="rounded-circle float-left" alt="...">
+          <a routerLink="" style="color: black;"><p class="name-admin text-center text-uppercase">Profile</p>
+          </a>
+        </div>
         
-      </mat-sidenav-content>
-      <!--end sidenav content-->
-      </mat-sidenav-container> 
+        <div style="margin-top: 80px;">
+          <ul class="list-group list-group-flush" *ngFor="let pilih of pilihan;">
+              <li>
+                <a class="list-group-item list-group-item-action" style="border: none;" routerLink="{{pilih['link']}}">
+                  <mat-icon class="ml-3 mb-2">{{pilih['icon']}}</mat-icon>
+                  <p class="text-monospace uk-text-middle uk-text-emphasis uk-text-bold ml-5" style="margin-top: -30px;">{{pilih['title']}}</p>
+              </a>
+              </li>
+          </ul>
+        </div>
+
+      </mat-sidenav>
     
+    <mat-sidenav #sidenav mode="side" [position]="'end'"  class="example-sidenav"
+    [fixedInViewport]="true" [fixedTopGap]="60"
+    [fixedBottomGap]="0">
+    </mat-sidenav>
+    <!-- sidenav content -->
+    <mat-sidenav-content style="padding: 20px; background-color: #bfbfbf;">
+    <!--halaman-halaman tampil disini-->
+
+    <router-outlet></router-outlet>
+      
+    </mat-sidenav-content>
+    <!--end sidenav content-->
+    </mat-sidenav-container> 
+  
 </div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "projectakhir-c5c85": {
+      "hosting": {
+        "app": [
+          "projectakhir-c5c85"
+        ]
+      }
+    }
+  }
+}

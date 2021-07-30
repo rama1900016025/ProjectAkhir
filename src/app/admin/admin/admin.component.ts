@@ -12,8 +12,8 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
   pilihan = [
-    {title:'Dashboard', link:'dasboard'},
-    {title:'Produk', link:'produk'}
+    {title:'Home', link:'home' , icon:'home'},
+    {title:'Playlist', link:'playlist', icon:'playlist_play'}
   ]
 
 }

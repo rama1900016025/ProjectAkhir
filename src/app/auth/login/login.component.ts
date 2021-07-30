@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +10,20 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   hide = true;
   user : any;
-  constructor() { }
+  constructor(
+    public auth: AngularFireAuth,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
   }
   login(){
-    
+    this.auth.signInWithEmailAndPassword(this.user.email, this.user.password).then(result=>{
+      if(result){
+        this.router.navigate(['/home']);
+      }
+    }).catch(err=>{
+      alert("login gagal");
+    });
   }
 }

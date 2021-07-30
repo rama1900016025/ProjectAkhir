@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { materialModule } from 'src/style/material/material';
-import { ProdukComponent } from './produk/produk.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { PlaylistComponent } from './playlist/playlist.component';
+import { SubplaylistComponent } from './subplaylist/subplaylist.component';
 
 const routes : Routes = [
   {
@@ -11,8 +12,12 @@ const routes : Routes = [
     component: AdminComponent,
     children: [
       {
-        path:'produk',
-        component: ProdukComponent
+        path:'playlist',
+        component: PlaylistComponent
+      },
+      {
+        path:'subplaylist',
+        component: SubplaylistComponent
       },
     ]
   }
@@ -20,8 +25,9 @@ const routes : Routes = [
 
 @NgModule({
   declarations: [
-    ProdukComponent,
-    AdminComponent
+    AdminComponent,
+    PlaylistComponent,
+    SubplaylistComponent
   ],
   imports: [
     RouterModule.forChild(routes),
